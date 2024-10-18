@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/MarketSimulator/DesignTimeBuild
+/.vs/MarketSimulator/FileContentIndex
+/.vs/MarketSimulator/v17
+/marketsimulator.client/obj/Debug
+/MarketSimulator.Server/bin/Debug/net8.0
+/MarketSimulator.Server/obj/Debug/net8.0/ref
+/MarketSimulator.Server/obj/Debug/net8.0/refint
+/MarketSimulator.Server/obj/Debug/net8.0/staticwebassets
+/MarketSimulator.Specs/bin/Debug/net8.0
+/MarketSimulator.Specs/obj/Debug/net8.0/ref
+/MarketSimulator.Specs/obj/Debug/net8.0/refint

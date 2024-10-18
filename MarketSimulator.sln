@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketSimulator.Server", "MarketSimulator.Server\MarketSimulator.Server.csproj", "{3A2FF3C8-87A5-4D4B-9E62-959693860A37}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "marketsimulator.client", "marketsimulator.client\marketsimulator.client.esproj", "{6EA3D75B-1A3B-4A4F-86CB-AC9C43439B48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketSimulator.Specs", "MarketSimulator.Specs\MarketSimulator.Specs.csproj", "{0F1C81D0-FB6E-4A4F-A827-46D0B6DB6EE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A2FF3C8-87A5-4D4B-9E62-959693860A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A2FF3C8-87A5-4D4B-9E62-959693860A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A2FF3C8-87A5-4D4B-9E62-959693860A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A2FF3C8-87A5-4D4B-9E62-959693860A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EA3D75B-1A3B-4A4F-86CB-AC9C43439B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA3D75B-1A3B-4A4F-86CB-AC9C43439B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA3D75B-1A3B-4A4F-86CB-AC9C43439B48}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6EA3D75B-1A3B-4A4F-86CB-AC9C43439B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA3D75B-1A3B-4A4F-86CB-AC9C43439B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EA3D75B-1A3B-4A4F-86CB-AC9C43439B48}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0F1C81D0-FB6E-4A4F-A827-46D0B6DB6EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1C81D0-FB6E-4A4F-A827-46D0B6DB6EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1C81D0-FB6E-4A4F-A827-46D0B6DB6EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1C81D0-FB6E-4A4F-A827-46D0B6DB6EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD8753AB-3084-404F-8BE9-5C41252D7676}
+	EndGlobalSection
+EndGlobal

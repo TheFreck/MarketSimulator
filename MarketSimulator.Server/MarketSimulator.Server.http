@@ -1,0 +1,6 @@
+@MarketSimulator.Server_HostAddress = http://localhost:5249
+
+GET {{MarketSimulator.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

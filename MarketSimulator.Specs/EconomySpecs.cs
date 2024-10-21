@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace MarketSimulator.Specs
 {
-    public class When_Starting_The_Economy
+    public class When_Completing_One_Market_Cycle
     {
         Establish context = () =>
         {
+
         };
     }
 }

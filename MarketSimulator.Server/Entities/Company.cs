@@ -7,7 +7,8 @@
         public string Name;
         public List<Asset> Portfolio;
         public int Debt;
+        public int TotalShares;
 
-        public decimal Value { get => Portfolio.Select(p => p.Value).Sum(); }
+        public double Value { get => Portfolio.Select(p => p.Value).Sum(); }
     }
 }

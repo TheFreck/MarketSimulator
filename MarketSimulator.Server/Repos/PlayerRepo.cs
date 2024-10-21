@@ -2,7 +2,11 @@
 
 namespace MarketSimulator.Server.Repos
 {
-    public class PlayerRepo
+    public interface IPlayerRepo
+    {
+        void Save(Player player);
+    }
+    public class PlayerRepo : IPlayerRepo
     {
         public virtual void Save(Player player)
         {

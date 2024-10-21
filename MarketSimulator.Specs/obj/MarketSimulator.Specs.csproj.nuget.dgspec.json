@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Specs\\MarketSimulator.Specs.csproj": {}
+    "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Specs\\MarketSimulator.Specs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj": {
+    "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj",
+        "projectUniqueName": "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj",
         "projectName": "MarketSimulator.Server",
-        "projectPath": "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj",
-        "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Server\\obj\\",
+        "projectPath": "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj",
+        "packagesPath": "C:\\Users\\wpica\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Server\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wpica\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,13 +46,25 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Machine.Specifications": {
+              "target": "Package",
+              "version": "[1.1.2, )"
+            },
+            "Machine.Specifications.Runner.VisualStudio": {
+              "target": "Package",
+              "version": "[2.10.2, )"
+            },
+            "Machine.Specifications.Should": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.AspNetCore.SpaProxy": {
               "target": "Package",
               "version": "[8.*-*, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[6.9.0, )"
             }
           },
           "imports": [
@@ -81,20 +90,17 @@
         }
       }
     },
-    "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Specs\\MarketSimulator.Specs.csproj": {
+    "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Specs\\MarketSimulator.Specs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Specs\\MarketSimulator.Specs.csproj",
+        "projectUniqueName": "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Specs\\MarketSimulator.Specs.csproj",
         "projectName": "MarketSimulator.Specs",
-        "projectPath": "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Specs\\MarketSimulator.Specs.csproj",
-        "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Specs\\obj\\",
+        "projectPath": "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Specs\\MarketSimulator.Specs.csproj",
+        "packagesPath": "C:\\Users\\wpica\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Specs\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wpica\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -109,8 +115,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj": {
-                "projectPath": "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj"
+              "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj": {
+                "projectPath": "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Server\\MarketSimulator.Server.csproj"
               }
             }
           }

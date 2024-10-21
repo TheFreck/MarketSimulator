@@ -48,8 +48,8 @@ namespace MarketSimulator.Specs
         {
             for (var i = 0; i < inputs.Count; i++)
             {
-                Company company = assetService.FormCompany(inputs[i].GameId, inputs[i].Name, inputs[i].Debt, 1000000,assets);
-                outcomes.Add(inputs[i],company);
+                Company company = assetService.FormCompany(inputs[i].GameId, inputs[i].Name, inputs[i].Debt, 1000000, assets);
+                outcomes.Add(inputs[i], company);
             }
         };
 
@@ -84,5 +84,124 @@ namespace MarketSimulator.Specs
         private static int assets;
         private static List<Company> inputs;
         protected static AssetService assetService;
+    }
+
+    public class When_Processing_Growth_For_A_Company : With_A_Company_Repo
+    {
+        Establish context = () =>
+        {
+            assetService = new AssetService(gameId, assetRepoMock.Object, companyRepoMock.Object);
+            companyId = Guid.NewGuid();
+            industryInputs = new Dictionary<IndustryTypes, double>
+            {
+                { IndustryTypes.Red, .15 },
+                { IndustryTypes.Orange, .2 },
+                { IndustryTypes.Yellow, .25 },
+                { IndustryTypes.Green, .3 },
+                { IndustryTypes.Blue, .35 },
+                { IndustryTypes.Violet, .4 }
+            };
+            assets = new List<Asset>
+            {
+                new Asset
+                {
+                    GameId = gameId,
+                    AssetId = Guid.NewGuid(),
+                    CompanyId = companyId,
+                    PrimaryIndustry = IndustryTypes.Red,
+                    SecondaryIndustry = IndustryTypes.Orange,
+                    Value = 100000
+                },
+                new Asset
+                {
+                    GameId=gameId,
+                    AssetId=Guid.NewGuid(),
+                    CompanyId=companyId,
+                    PrimaryIndustry=IndustryTypes.Yellow,
+                    SecondaryIndustry=IndustryTypes.Green,
+                    Value = 100000
+                },
+                new Asset
+                {
+                    GameId=gameId,
+                    AssetId=Guid.NewGuid(),
+                    CompanyId=companyId,
+                    PrimaryIndustry=IndustryTypes.Blue,
+                    SecondaryIndustry=IndustryTypes.Violet,
+                    Value = 100000
+                }
+            };
+            grownAssets = new List<Asset>
+            {
+                new Asset
+                {
+                    GameId = gameId,
+                    AssetId = Guid.NewGuid(),
+                    CompanyId = companyId,
+                    PrimaryIndustry = IndustryTypes.Red,
+                    SecondaryIndustry = IndustryTypes.Orange,
+                    Value = 116667
+                },
+                new Asset
+                {
+                    GameId=gameId,
+                    AssetId=Guid.NewGuid(),
+                    CompanyId=companyId,
+                    PrimaryIndustry=IndustryTypes.Yellow,
+                    SecondaryIndustry=IndustryTypes.Green,
+                    Value = 126667
+                },
+                new Asset
+                {
+                    GameId=gameId,
+                    AssetId=Guid.NewGuid(),
+                    CompanyId=companyId,
+                    PrimaryIndustry=IndustryTypes.Blue,
+                    SecondaryIndustry=IndustryTypes.Violet,
+                    Value = 136667
+                }
+            };
+            company = new Company
+            {
+                GameId = gameId,
+                CompanyId = companyId,
+                Name = "CompanyTest",
+                Debt = 4,
+                Portfolio = assets
+            };
+            expectedCompany = new Company
+            {
+                GameId = gameId,
+                CompanyId = companyId,
+                Name = "CompanyTest",
+                Debt = 4,
+                Portfolio = assets
+            };
+            expectedGrowth = 380000;
+        };
+
+        Because of = () => outcome = assetService.GrowCompany(company,industryInputs);
+
+        It Should_Grow_Assets_And_Copmany_Value = () =>
+        {
+            expectedCompany.GameId.ShouldEqual(gameId);
+            expectedCompany.CompanyId.ShouldEqual(companyId);
+            expectedCompany.Name.ShouldEqual(company.Name);
+            expectedCompany.Debt.ShouldEqual(company.Debt);
+            expectedCompany.Portfolio.Count.ShouldEqual(company.Portfolio.Count);
+            expectedCompany.Value.ShouldEqual(expectedGrowth);
+        };
+
+        It Should_Persist_Changes_In_Company_Value = () => companyRepoMock.Verify(a => a.Save(Moq.It.IsAny<Company>()),Times.Once);
+
+        private static AssetService assetService;
+        private static Guid companyId;
+        private static Dictionary<IndustryTypes, double> industryInputs;
+        private static List<Asset> assets;
+        private static List<Asset> grownAssets;
+        private static Company company;
+        private static Company expectedCompany;
+        private static int expectedGrowth;
+        private static Company outcome;
     }
 }

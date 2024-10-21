@@ -7,6 +7,6 @@
         public Guid CompanyId;
         public IndustryTypes PrimaryIndustry;
         public IndustryTypes SecondaryIndustry;
-        public decimal Value;
+        public double Value;
     }
 }

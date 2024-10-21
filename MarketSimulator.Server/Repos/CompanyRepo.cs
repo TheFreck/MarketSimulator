@@ -2,7 +2,11 @@
 
 namespace MarketSimulator.Server.Repos
 {
-    public class CompanyRepo
+    public interface ICompanyRepo
+    {
+        void Save(Company company);
+    }
+    public class CompanyRepo : ICompanyRepo
     {
         public virtual void Save(Company company)
         {

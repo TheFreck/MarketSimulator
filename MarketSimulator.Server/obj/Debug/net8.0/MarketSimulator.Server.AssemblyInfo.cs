@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MarketSimulator.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc088c045fb0754e82e5fc9eb3cfbf97dad6b5e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459193e050aa3a88a3718540a566a9d9cef27e9b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MarketSimulator.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MarketSimulator.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

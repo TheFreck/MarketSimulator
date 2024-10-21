@@ -65,5 +65,18 @@ namespace MarketSimulator.Server.Services
             companyRepo.Save(company);
             return company;
         }
+
+        public Company GrowCompany(Company company, Dictionary<IndustryTypes, double> industryInputs)
+        {
+            for (var i = 0; i < company.Portfolio.Count; i++)
+            {
+                var grossRate = industryInputs[company.Portfolio[i].PrimaryIndustry] * 2;
+                grossRate += industryInputs[company.Portfolio[i].SecondaryIndustry];
+                company.Portfolio[i].Value *= 1 + grossRate / 3;
+            }
+            var companyValue = company.Value;
+            companyRepo.Save(company);
+            return company;
+        }
     }
 }

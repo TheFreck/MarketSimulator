@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "C:\\Users\\owner\\source\\repos\\MarketSimulator\\MarketSimulator.Server\\..\\marketsimulator.client",
+"WorkingDirectory": "C:\\Users\\wpica\\Source\\Repos\\MarketSimulator\\MarketSimulator.Server\\..\\marketsimulator.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

@@ -3,7 +3,8 @@
     public class Share
     {
         public Guid GameId;
-        public Guid AssetId;
+        public Guid CompanyId;
         public Guid ShareId;
+        public string CompanyName;
     }
 }

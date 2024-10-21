@@ -5,7 +5,7 @@
         public Guid GameId;
         public Guid PlayerId;
         public string Name;
-        public decimal Cash;
+        public double Cash;
         public double RiskTolerance;
         public List<Share> Portfolio;
     }

@@ -5,5 +5,6 @@
         public Guid GameId;
         public Company[] Companies;
         public Player[] Players;
+        public Dictionary<IndustryTypes, double> IndustryGrowth;
     }
 }

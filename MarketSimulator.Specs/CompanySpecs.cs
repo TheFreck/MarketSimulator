@@ -25,6 +25,7 @@ namespace MarketSimulator.Specs
         protected static Mock<AssetRepo> assetRepoMock { get; private set; }
         protected static Mock<CompanyRepo> companyRepoMock { get; private set; }
     }
+
     public class When_Forming_A_Company : With_A_Company_Repo
     {
         Establish context = () =>

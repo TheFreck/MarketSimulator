@@ -3,6 +3,13 @@ using MarketSimulator.Server.Repos;
 
 namespace MarketSimulator.Server.Services
 {
+    public interface IAssetService
+    {
+        List<Asset> FormAssets(int value, int qty);
+        Company FormCompany(Guid gameId, string name, int debt, int value, int assets);
+        Company GrowCompany(Company company, Dictionary<IndustryTypes, double> industryInputs);
+        Dictionary<IndustryTypes, double> GrowIndustries();
+    }
     public class AssetService
     {
         private Guid gameId;
@@ -77,6 +84,23 @@ namespace MarketSimulator.Server.Services
             var companyValue = company.Value;
             companyRepo.Save(company);
             return company;
+        }
+
+        public Dictionary<IndustryTypes,double> GrowIndustries()
+        {
+            var a = .01;
+            var b = 2.0129435;
+            var c = .01;
+            var mag = Math.Tan(Math.PI * (randy.NextDouble() * 2 - 1) / b) * c - a;
+            return new Dictionary<IndustryTypes, double>
+            {
+                { IndustryTypes.Red, Math.Tan(Math.PI * (randy.NextDouble() * 2 - 1) / b) * c - a},
+                { IndustryTypes.Orange, Math.Tan(Math.PI * (randy.NextDouble() * 2 - 1) / b) * c - a},
+                { IndustryTypes.Yellow, Math.Tan(Math.PI * (randy.NextDouble() * 2 - 1) / b) * c - a},
+                { IndustryTypes.Green, Math.Tan(Math.PI * (randy.NextDouble() * 2 - 1) / b) * c - a},
+                { IndustryTypes.Blue, Math.Tan(Math.PI * (randy.NextDouble() * 2 - 1) / b) * c - a},
+                { IndustryTypes.Violet, Math.Tan(Math.PI * (randy.NextDouble() * 2 - 1) / b) * c - a},
+            };
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MarketSimulator.Specs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459193e050aa3a88a3718540a566a9d9cef27e9b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e871694ee20de895bb71bf5837d95aad24c43f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MarketSimulator.Specs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MarketSimulator.Specs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

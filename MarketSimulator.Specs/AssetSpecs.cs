@@ -70,4 +70,27 @@ namespace MarketSimulator.Specs
         private static List<(int value, int assets)> inputs;
         private static List<List<Asset>> outcomes;
     }
+
+    public class When_Growing_Industries : With_An_Asset_Repo
+    {
+        Establish context = () =>
+        {
+            assetService = new AssetService(gameId, assetRepoMock.Object, companyRepoMock.Object);
+        };
+
+        Because of = () => outcomes = assetService.GrowIndustries();
+
+        It Should_Grow_Each_Industry_Independently = () =>
+        {
+            outcomes[IndustryTypes.Red].ShouldNotBeNull();
+            outcomes[IndustryTypes.Orange].ShouldNotBeNull();
+            outcomes[IndustryTypes.Yellow].ShouldNotBeNull();
+            outcomes[IndustryTypes.Green].ShouldNotBeNull();
+            outcomes[IndustryTypes.Blue].ShouldNotBeNull();
+            outcomes[IndustryTypes.Violet].ShouldNotBeNull();
+        };
+
+        private static AssetService assetService;
+        private static Dictionary<IndustryTypes, double> outcomes;
+    }
 }

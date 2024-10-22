@@ -7,6 +7,7 @@ namespace MarketSimulator.Server.Services
     {
         void RegisterTrades(List<OrderTicket> orders);
         TradeConfirmation Trade(Player buyer, Player seller, Company company, int shareCount, double sharePrice);
+        TradeRegistry ExecuteRegisteredTrades();
     }
 
     public class TradeService : ITradeService
@@ -26,6 +27,8 @@ namespace MarketSimulator.Server.Services
 
         public TradeRegistry ExecuteRegisteredTrades()
         {
+            registry.SuccessfulTrades.Clear();
+            registry.FailedTrades.Clear();
             var executedTrades = new List<TradeConfirmation>();
             foreach (var order in registry.Orders)
             {
@@ -49,7 +52,7 @@ namespace MarketSimulator.Server.Services
             var player1Trades = executedTrades.Where(t => t.Buyer.Name == "Player1" || t.Seller.Name == "Player1").ToList();
             var player2Trades = executedTrades.Where(t => t.Buyer.Name == "Player2" || t.Seller.Name == "Player2").ToList();
             var player3Trades = executedTrades.Where(t => t.Buyer.Name == "Player3" || t.Seller.Name == "Player3").ToList();
-
+            registry.Orders.Clear();
             return registry;
         }
 

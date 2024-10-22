@@ -185,6 +185,7 @@ namespace MarketSimulator.Specs
         protected static Player player3;
         protected static List<Player> inputPlayers;
     }
+
     public class When_Trading_Shares : With_A_Trade_Repo
     {
         Establish context = () =>
@@ -474,6 +475,7 @@ namespace MarketSimulator.Specs
         It Should_Assign_A_TradeId = () => outcomes.SuccessfulTrades.Where(t => t.TradeId != Guid.Empty).Count().ShouldEqual(7);
         It Should_Assign_Success = () => outcomes.SuccessfulTrades.Count.ShouldEqual(7);
         It Should_Assign_Failure = () => outcomes.FailedTrades.Count.ShouldEqual(1);
+        It Should_Clear_Executed_Trades_From_Orders = () => outcomes.Orders.ShouldBeEmpty();
         It Should_Only_Execute_Eligible_Trades_P3_C2_Shares = () => player3.Portfolio.Where(c => c.CompanyId == company2Id).Count().ShouldEqual(40);
         It Should_Only_Execute_Eligible_Trades_P3_C1_Shares = () => player3.Portfolio.Where(c => c.CompanyId == company1Id).Count().ShouldEqual(0);
         It Should_Only_Execute_Eligible_Trades_P2_C2_Shares = () => player2.Portfolio.Where(c => c.CompanyId == company2Id).Count().ShouldEqual(260);
@@ -483,6 +485,7 @@ namespace MarketSimulator.Specs
         It Should_Only_Execute_Eligible_Trades_P1_Cash = () => player1.Cash.ShouldEqual(0);
         It Should_Only_Execute_Eligible_Trades_P2_Cash = () => player2.Cash.ShouldEqual(200);
         It Should_Only_Execute_Eligible_Trades_P3_Cash = () => player3.Cash.ShouldEqual(8800);
+        It Should_Clear_Out_Executed_Trades = () => tradeService.registry.Orders.ShouldBeEmpty();
 
         private static TradeService tradeService;
         private static List<OrderTicket> trades;
